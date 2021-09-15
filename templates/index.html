@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tom's YouTube Downloader</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename= 'js/client.js') }}"></script>
+    <style>
+        #upload{
+        display:none
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tom's Youtube Downloader</h1>
+        <p>Because all the others are fucking stupid and littered with ads</p>
+        <hr>
+        <form action="/submitData" method="POST">
+            <input name="url" id="txt" type="text" class="form-control" placeholder="URL">
+            <p id="status"></p>
+            <input onclick="submit()" type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        function submit(){ //this is useless but i really dc if it stays here lmao
+            document.getElementById("status").innerHTML = "Doing some server magic... Please wait while we download your file."
+        }
+    </script>
+</body>
+</html>
